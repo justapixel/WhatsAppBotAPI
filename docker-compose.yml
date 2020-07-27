@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  # PostgreSQL
+  postgres:
+    image: postgres:12
+    container_name: postgres_botdb
+    restart: always
+    environment:
+      POSTGRES_USER: postgresdev
+      POSTGRES_PASSWORD: postgresdev
+      POSTGRES_DB: whatsappbot
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_store:/var/lib/postgresql/data
+
+#Volumes
+volumes:
+  postgres_store:
+    driver: local
