@@ -7,5 +7,12 @@ class ChatsController {
     const teste = await WhatsAppClient.client.getChats()
     return res.json(teste)
   }
+
+  async isValid (req: Request, res: Response) {
+    const phone = req.query.phone
+    const phoneId = `${phone}@c.us`
+    const isValid = await WhatsAppClient.client.isRegisteredUser(phoneId)
+    return res.json(isValid)
+  }
 }
 export default ChatsController

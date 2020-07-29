@@ -6,7 +6,7 @@ class WhatsAppClient {
   public client: Client
 
   constructor () {
-    this.clientInit()
+    // this.clientInit()
   }
 
   public async clientInit (): Promise<void> {
